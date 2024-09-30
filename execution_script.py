@@ -15,8 +15,6 @@ import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 from torch.utils.data import DataLoader,Dataset
 from PIL import Image
-import matplotlib.pyplot as plt
-import numpy as np
 
 absolute_path = os.path.dirname(__file__)
 
@@ -61,8 +59,8 @@ def pre_image(image_path,model):
    with torch.no_grad():
       model.eval()
       output = model(img)
-      print(output)
       index = output.data.cpu().numpy().argmax()
+      print("Index = ", index)
       classes = ('benign', 'malignant')
       class_name = classes[index]
       return class_name

@@ -27,8 +27,8 @@ validation_set = datasets.ImageFolder(test_dir,
                                         transform=transform)
 
 # Create data loaders for our datasets; shuffle for training, not for validation
-training_loader = torch.utils.data.DataLoader(training_set, batch_size=4, shuffle=True)
-validation_loader = torch.utils.data.DataLoader(validation_set, batch_size=4, shuffle=False)
+training_loader = torch.utils.data.DataLoader(training_set, batch_size=64, shuffle=True)
+validation_loader = torch.utils.data.DataLoader(validation_set, batch_size=64, shuffle=False)
 
 # Class labels
 classes = ('benign', 'malignant')
@@ -73,7 +73,6 @@ model = CancerClassifier()
 
 loss_fn = torch.nn.CrossEntropyLoss()
 
-# Optimizers specified in the torch.optim package
 optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
 def train_one_epoch(epoch_index, tb_writer):
