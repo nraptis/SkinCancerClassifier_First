@@ -41,7 +41,7 @@ model_dir = os.path.join(absolute_path, "cancer.model")
 model = CancerClassifier()
 model.load_state_dict(torch.load(model_dir, weights_only=True), strict=False)
 
-image_dir = os.path.join(absolute_path, "benign_mole_224.png")
+image_dir = os.path.join(absolute_path, "benign_mole_02_224.png")
 
 transform = transforms.Compose(
     [transforms.Resize((224,224)),

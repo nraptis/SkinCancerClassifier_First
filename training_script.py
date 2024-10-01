@@ -112,7 +112,7 @@ timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 writer = SummaryWriter('runs/cancer_trainer_{}'.format(timestamp))
 epoch_number = 0
 
-EPOCHS = 50
+EPOCHS = 7500
 
 best_vloss = 1_000_000.
 
